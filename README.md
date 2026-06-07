@@ -11,7 +11,7 @@ Dataset: [Kaggle Superstore](https://www.kaggle.com/datasets/vivek468/superstore
    Business Questions & Findings:
 
 | Question | Finding |
-
+|---|---|
 | Which region sells the most?             | West — highest total sales |
 | Most vs least profitable category?       | Technology best, Furniture worst despite high sales |
 | Top customer by spending?                | Sean Miller at #1 |
