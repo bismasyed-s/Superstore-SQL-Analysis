@@ -11,7 +11,7 @@ Dataset: [Kaggle Superstore](https://www.kaggle.com/datasets/vivek468/superstore
    Business Questions & Findings:
 
 | Question | Finding |
-|---|---|
+|---|---|---|
 | 1 | Which customers spent above average? | 762 customers |
 | 2 | Which products were never discounted? | 194 products |
 | 3 | Which orders beat their regional average? | Correlated subquery |
