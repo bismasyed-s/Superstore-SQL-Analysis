@@ -12,11 +12,20 @@ Dataset: [Kaggle Superstore](https://www.kaggle.com/datasets/vivek468/superstore
 
 | Question | Finding |
 |---|---|
-| Which region sells the most?             | West — highest total sales |
-| Most vs least profitable category?       | Technology best, Furniture worst despite high sales |
-| Top customer by spending?                | Sean Miller at #1 |
-| How many products never got discounted?  | 197 out of ~1,800 products |
-| Which states cross $50k in sales?        | Multiple states — California leads |
+| 1 | Which customers spent above average? | 762 customers |
+| 2 | Which products were never discounted? | 194 products |
+| 3 | Which orders beat their regional average? | Correlated subquery |
+| 4 | Sales by region | West leads |
+| 5 | Profit by category | Technology most profitable |
+| 6 | Top 5 customers | Sean Miller #1 |
+| 7 | States above $50k | California leads |
+| 8 | Rank all orders by sales | Highest: $22,638 |
+| 9 | Rank within each region | 4 regions ranked independently |
+| 10 | Top 3 customers per region | 12 customers total |
+| 11 | Running total of sales | Cumulative from 2014 |
+| 12 | Sales vs previous order | Day-over-day swings |
+| 13 | Row number by sales | Unique ranking, no ties |
+| 14 | Sales vs next order | Forward comparison via LEAD() |
 
   Concepts Applied
 - Aggregate functions (SUM, AVG, MAX)
@@ -24,17 +33,7 @@ Dataset: [Kaggle Superstore](https://www.kaggle.com/datasets/vivek468/superstore
 - Subqueries in WHERE clause
 - IN / NOT IN with subqueries
 - Correlated subqueries
-
-
-| 8 | Rank all orders by sales | Highest single order: $22,638 |
-| 9 | Rank customers within each region | West, East, Central, South ranked independently |
-| 10 | Top 3 customers per region | 12 customers total across 4 regions |
-| 11 | Running total of sales over time | Cumulative revenue tracked from 2014 |
-| 12 | Sales vs previous order | Identifies day-over-day sales swings |
-| 13 | Row number by sales | Unique sequential ranking, no ties |
-| 14 | Sales vs next order | Forward-looking comparison using LEAD() |
-
-- Window Functions (RANK, DENSE_RANK, ROW_NUMBER, LAG, LEAD, SUM OVER)
+-  Window Functions (RANK, DENSE_RANK, ROW_NUMBER, LAG, LEAD, SUM OVER)
 
   Files:
 - `superstore_analysis.sql` — 7 queries with comments
