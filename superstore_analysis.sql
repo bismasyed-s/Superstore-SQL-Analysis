@@ -56,3 +56,47 @@ FROM superstore
 GROUP BY "State"
 HAVING SUM("Sales") > 50000
 ORDER BY total_sales DESC;
+
+
+    WINDOW FUNCTIONS
+
+   Query 8: Rank all orders by sales (global)
+SELECT "Order ID", "Sales",
+RANK() OVER (ORDER BY "Sales" DESC) AS sales_rank
+FROM superstore;
+
+   Query 9: Rank customers by sales within each region
+SELECT "Customer Name", "Region", "Sales",
+RANK() OVER (PARTITION BY "Region" ORDER BY "Sales" DESC) AS region_rank
+FROM superstore;
+
+    Query 10: Top 3 customers per region
+SELECT "Customer Name", "Region", "Sales", region_rank
+FROM (
+    SELECT "Customer Name", "Region", "Sales",
+    RANK() OVER (PARTITION BY "Region" ORDER BY "Sales" DESC) AS region_rank
+    FROM superstore
+) AS ranked
+WHERE region_rank <= 3;
+
+   Query 11: Running total of sales over time
+SELECT "Order Date", "Sales",
+SUM("Sales") OVER (ORDER BY "Order Date") AS running_total
+FROM superstore;
+
+    Query 12: Sales vs previous order + difference
+SELECT "Order Date", "Sales",
+LAG("Sales") OVER (ORDER BY "Order Date") AS previous_sales,
+"Sales" - LAG("Sales") OVER (ORDER BY "Order Date") AS difference
+FROM superstore;
+
+    Query 13: Row number by sales descending
+SELECT "Order ID", "Sales",
+ROW_NUMBER() OVER (ORDER BY "Sales" DESC) AS row_num
+FROM superstore;
+
+    Query 14: Sales vs next order
+SELECT "Order ID", "Sales",
+LEAD("Sales") OVER (ORDER BY "Sales") AS next_order
+FROM superstore;
+
