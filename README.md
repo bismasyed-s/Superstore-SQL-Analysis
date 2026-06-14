@@ -1,14 +1,15 @@
 # Superstore Sales Analysis — SQL Project
 
-   Overview:
-Exploratory SQL analysis of the Kaggle Superstore dataset — 9,994 orders 
-across US regions, covering sales, profit, discounts, and customer behavior.
+## Overview
+Exploratory SQL analysis of the Kaggle Superstore dataset — 9,994 orders across US regions (2014–2017), uncovering sales trends, customer behavior, and profitability insights.
 
-Tool: PostgreSQL 17 + DBeaver  
-Dataset: [Kaggle Superstore](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final)
+**Tool:** PostgreSQL 17 + DBeaver  
+**Dataset:** [Kaggle Superstore](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final)  
+**Author:** Bisma Syed — CS Student & Aspiring Data Analyst
 
+---
 
-   Business Questions & Findings:
+## Business Questions & Key Findings
 
 | # | Question | Finding |
 |---|----------|---------|
@@ -43,9 +44,9 @@ Dataset: [Kaggle Superstore](https://www.kaggle.com/datasets/vivek468/superstore
 - **West region dominates** with 30% of total sales
 - **194 products never discounted** — potential to test discount strategy for slow movers
   
-  Files:
-- `superstore_analysis.sql` — 7 queries with comments
+ ## Files:
+- `superstore_analysis.sql` — 14 queries with comments and business context
 
-   About:
+ ##  About:
 Built by **Bisma Syed** — CS student and aspiring Data Analyst   
 [GitHub](https://github.com/bismasyed-s) 
